@@ -1993,38 +1993,46 @@
 
         });
     </script>
-    <!-- ============================================== -->
-    <!-- FINAL LOGIC: ADMIN & DATABASE CONNECTION       -->
+   <!-- ============================================== -->
+    <!-- FINAL LOGIC: WITH DEBUG ALERTS                 -->
     <!-- ============================================== -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        // --- 1. SETUP - PASTE YOUR KEYS HERE ---
+        // --- 1. SETUP ---
+        // MAKE SURE THESE ARE INSIDE QUOTES ""
         const SUPABASE_URL = "https://lyzidxxonmaoomgtknhz.supabase.co";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU";
 
         // --- 2. INIT ---
-        const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        let sbClient;
+        try {
+            sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+            console.log("Supabase connected");
+        } catch (err) {
+            alert("CRITICAL ERROR: Could not connect to database. Check your keys in the code.");
+        }
 
-        // --- 3. MANUAL UPLOAD FUNCTION (Linked to your new button) ---
+        // --- 3. UPLOAD FUNCTION ---
         async function manualUpload() {
-            // Get values from the form
-            const pPlatform = document.getElementById('pPlatform').value;
-            const pCategory = document.getElementById('pCategory').value;
-            const pTier = document.getElementById('pTier').value;
-            const pSponsor = document.getElementById('pSponsor').value;
-            const pBenefit = document.getElementById('pBenefit').value;
-            const pLink = document.getElementById('pLink').value;
+            alert("System Check: OK. Attempting upload..."); // <--- THIS PROVES THE BUTTON WORKS
 
-            // Basic check
+            const pPlatform = document.getElementById('pPlatform').value;
+            const pLink = document.getElementById('pLink').value;
+            
+            // Grab other values safely
+            const pCategory = document.getElementById('pCategory') ? document.getElementById('pCategory').value : 'general';
+            const pTier = document.getElementById('pTier') ? document.getElementById('pTier').value : 'Basic';
+            const pSponsor = document.getElementById('pSponsor') ? document.getElementById('pSponsor').value : '';
+            const pBenefit = document.getElementById('pBenefit') ? document.getElementById('pBenefit').value : '';
+
             if(!pPlatform || !pLink) {
-                alert("Please fill in at least Platform and Link.");
+                alert("STOP: Platform and Link are required.");
                 return;
             }
 
-            // Upload to Supabase
             const { error } = await sbClient.from('partners').insert([{
                 platform: pPlatform,
                 category: pCategory,
@@ -2036,24 +2044,23 @@
 
             if (!error) { 
                 alert("✅ Success! Partner Added."); 
-                location.reload(); // Refresh to see new data
+                location.reload(); 
             } else { 
-                alert("❌ Error: " + error.message); 
+                alert("❌ Database Error: " + error.message); 
             }
         }
 
-        // --- 4. ADMIN LOGIN LOGIC ---
+        // --- 4. ADMIN LOGIN ---
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('admin') === 'true') {
-                // Slight delay to let Bootstrap load
                 setTimeout(() => {
-                    new bootstrap.Modal(document.getElementById('adminLoginModal')).show();
+                    const modal = new bootstrap.Modal(document.getElementById('adminLoginModal'));
+                    modal.show();
                 }, 500);
             }
         });
 
-        // Login Form Handler
         const loginForm = document.getElementById('loginForm');
         if(loginForm) {
             loginForm.addEventListener('submit', async (e) => {
@@ -2072,84 +2079,71 @@
             });
         }
 
-        // Logout
-        window.logout = async () => { await sbClient.auth.signOut(); window.location.href = "/"; };
-
-        // --- 5. LOAD PARTNERS (Dynamic Grid) ---
+        // --- 5. LOAD DATA ---
         async function loadDynamicPartners() {
             const grid = document.getElementById('partnerGrid');
-            let { data: partners, error } = await sbClient.from('partners').select('*');
+            if(!grid) return;
+
+            let { data: partners } = await sbClient.from('partners').select('*');
             
             if(partners && partners.length > 0) {
-                // If we have real data, clear the loading spinner
                 grid.innerHTML = "";
+                window.allPartners = partners; // Save for modals
                 
-                // Loop through partners and build cards
                 const uniquePlatforms = [...new Set(partners.map(p => p.platform))];
                 uniquePlatforms.forEach(platform => {
                     const count = partners.filter(p => p.platform === platform).length;
                     
-                    // Simple Icon Logic
                     let icon = 'bi-app';
-                    if(platform.toLowerCase().includes('binance') || platform.toLowerCase().includes('coinbase')) icon = 'bi-currency-bitcoin';
+                    if(platform.toLowerCase().includes('binance')) icon = 'bi-currency-bitcoin';
                     
                     grid.innerHTML += `
                         <div class="col-md-6 col-lg-4">
                             <div class="partner-card">
                                 <div class="d-flex align-items-start mb-3">
                                     <div class="bg-light border rounded p-2 me-3"><i class="bi ${icon} fs-2 text-primary"></i></div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">${platform}</h5>
-                                        <span class="badge-verified">Verified</span>
-                                    </div>
+                                    <div><h5 class="fw-bold mb-0">${platform}</h5><span class="badge-verified">Verified</span></div>
                                 </div>
                                 <p class="text-muted small mb-4">${count} active offers.</p>
                                 <button class="btn btn-primary w-100 mt-auto" onclick="openPartnerModal('${platform}')">View Partner Links</button>
                             </div>
                         </div>`;
                 });
-                
-                // Update our global list so modals work
-                window.allPartners = partners;
-            } else {
-                // If DB is empty, the HTML already has a loading spinner or you can leave it blank
-                console.log("No partners in DB yet.");
             }
         }
         
-        // Helper to open modals with dynamic data
+        // Modal Helper
         window.openPartnerModal = function(platformName) {
+            const container = document.getElementById('modalLinksContainer');
             const modalHeader = document.getElementById('modalHeaderContent');
-            const modalContainer = document.getElementById('modalLinksContainer');
             const modal = new bootstrap.Modal(document.getElementById('dynamicModal'));
+            
+            modalHeader.innerHTML = `<h5>${platformName}</h5>`;
+            container.innerHTML = "";
 
-            modalHeader.innerHTML = `<div><h5 class="modal-title fw-bold">${platformName} Links</h5><p class="text-muted small mb-0">Verified partners.</p></div>`;
-            modalContainer.innerHTML = "";
-
-            // Use the global data we fetched
-            const platformPartners = window.allPartners.filter(p => p.platform === platformName);
-            const tierOrder = { 'Pro': 1, 'Premium': 2, 'Basic': 3 };
-            platformPartners.sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier]);
-
-            if(platformPartners.length === 0) modalContainer.innerHTML = "<p class='text-muted'>No links yet.</p>";
-
-            platformPartners.forEach(p => {
-                let badgeClass = p.tier === 'Pro' ? 'bg-primary' : (p.tier === 'Premium' ? 'bg-success' : 'bg-secondary');
-                modalContainer.innerHTML += `
-                    <div class="partner-link-card">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <span class="badge ${badgeClass} tier-badge mb-1">${p.tier} Sponsor</span>
-                                <h6 class="fw-bold mb-0">${p.benefit}</h6>
-                                <small class="text-muted">By: ${p.sponsor}</small>
+            const platformPartners = window.allPartners ? window.allPartners.filter(p => p.platform === platformName) : [];
+            
+            if(platformPartners.length === 0) {
+                container.innerHTML = "No links found.";
+            } else {
+                platformPartners.forEach(p => {
+                    container.innerHTML += `
+                        <div class="partner-link-card">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span class="badge bg-primary mb-1">${p.tier}</span>
+                                    <h6>${p.benefit}</h6>
+                                    <small>By: ${p.sponsor}</small>
+                                </div>
+                                <a href="${p.link}" target="_blank" class="btn btn-sm btn-outline-primary">Claim</a>
                             </div>
-                            <a href="${p.link}" target="_blank" class="btn btn-sm btn-outline-primary fw-bold">Claim</a>
-                        </div>
-                    </div>`;
-            });
+                        </div>`;
+                });
+            }
             modal.show();
-        };
+        }
 
         loadDynamicPartners();
     </script>
+</body>
 </html>
