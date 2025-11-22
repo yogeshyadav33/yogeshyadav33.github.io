@@ -1089,9 +1089,13 @@
                         <!-- This form is 100% Netlify Ready -->
                         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="a287537c-fd85-45ef-ab8b-5d5d3feffd97">
-                            <div id="form-success-message" class="alert alert-success d-none" role="alert">
-                              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent. We'll review it and get back to you soon.
-                            </div>
+                           <div id="form-success-message" class="alert alert-success d-none" role="alert">
+    <strong>Thank You!</strong> Your message has been sent.
+</div>
+
+<div class="col-12 text-center">
+    <button type="submit" class="btn btn-primary">Send Message</button>
+</div>
                             
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -1925,53 +1929,53 @@
             });
 
           document.addEventListener("DOMContentLoaded", function() {
-    // 1. Find the form and the success message div
+    
+    // 1. Get the Form and the Success Message Box
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('form-success-message');
 
-    // 2. Check if the form actually exists on this page
+    // Only run this code if the form actually exists on the page
     if (contactForm) {
-        console.log("Form found, listening for submit..."); // Debugging check
-
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop page reload
+            e.preventDefault(); // Stop the page from reloading
 
-            // Show a "Sending..." status (optional but good for UX)
+            // 2. Change Button Text to "Sending..."
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn ? submitBtn.innerText : 'Send';
-            if(submitBtn) submitBtn.innerText = "Sending...";
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
 
+            // 3. Gather Data
             const formData = new FormData(contactForm);
 
-            // Send to Web3Forms
+            // 4. Send to Web3Forms
             fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData
             })
             .then(async (response) => {
-                const json = await response.json();
                 if (response.status == 200) {
-                    // SUCCESS
-                    successMessage.classList.remove('d-none'); // Show success green box
-                    contactForm.reset(); // Clear inputs
-                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                    // ✅ SUCCESS: Remove the 'd-none' class to show the Green Box
+                    if (successMessage) {
+                        successMessage.classList.remove('d-none');
+                    }
+                    
+                    // Clear the form fields
+                    contactForm.reset(); 
                 } else {
-                    // ERROR (e.g., wrong key)
-                    console.log(response);
-                    alert("Error: " + json.message);
+                    // ❌ ERROR
+                    console.log("Error:", response);
+                    alert("Something went wrong. Please try again.");
                 }
             })
             .catch(error => {
                 console.log(error);
-                alert("Something went wrong! Please check your internet connection.");
+                alert("Internet connection error.");
             })
             .finally(() => {
-                // Reset button text
-                if(submitBtn) submitBtn.innerText = originalBtnText;
+                // 5. Reset Button Text back to normal
+                submitBtn.innerText = originalText;
             });
         });
-    } else {
-        console.error("Could not find element with id 'contactForm'");
     }
 });
             // --- 6. Dynamic Current Year for Footer ---
