@@ -1930,40 +1930,46 @@
 
           document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. Get the Form and the Success Message Box
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('form-success-message');
 
-    // Only run this code if the form actually exists on the page
+    // --- FIX: Force Clear Form on "Back" Button ---
+    // This runs if the user navigates away and clicks "Back"
+    window.onpageshow = function(event) {
+        if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
+             if (contactForm) contactForm.reset();
+        }
+    };
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop the page from reloading
+            e.preventDefault(); // 1. STOP the redirection
 
-            // 2. Change Button Text to "Sending..."
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerText;
+            
+            // Change button text to show activity
             submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true; // Disable button to prevent double-clicks
 
-            // 3. Gather Data
             const formData = new FormData(contactForm);
 
-            // 4. Send to Web3Forms
             fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData
             })
             .then(async (response) => {
                 if (response.status == 200) {
-                    // ✅ SUCCESS: Remove the 'd-none' class to show the Green Box
+                    // ✅ SUCCESS
                     if (successMessage) {
                         successMessage.classList.remove('d-none');
+                        // Scroll to the message so they see it
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
-                    
-                    // Clear the form fields
-                    contactForm.reset(); 
+                    // Clear the inputs immediately
+                    contactForm.reset();
                 } else {
                     // ❌ ERROR
-                    console.log("Error:", response);
                     alert("Something went wrong. Please try again.");
                 }
             })
@@ -1972,8 +1978,9 @@
                 alert("Internet connection error.");
             })
             .finally(() => {
-                // 5. Reset Button Text back to normal
+                // Reset button
                 submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
             });
         });
     }
