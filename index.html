@@ -1909,8 +1909,9 @@
     <script>
         // --- 1. SETUP ---
         // MAKE SURE THESE ARE INSIDE QUOTES ""
-        // NOTE: Insert your actual URL and Key directly here, keeping the quotes!
-const sbClient = supabase.createClient("https://lyzidxxonmaoomgtknhz.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU");
+       const SUPABASE_URL = "https://lyzidxxonmaoomgtknhz.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU"; 
+const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
             console.log("Supabase connected");
         } catch (err) {
             alert("CRITICAL ERROR: Could not connect to database. Check your keys in the code.");
