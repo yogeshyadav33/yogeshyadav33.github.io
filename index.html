@@ -517,6 +517,48 @@
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+    <!-- === INJECTED: ADMIN LOGIN MODAL === -->
+    <div id="adminLoginModal" class="modal fade" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white"><h5 class="modal-title">Admin Login</h5></div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3"><label>Email</label><input type="email" id="adminEmail" class="form-control" required></div>
+                        <div class="mb-3"><label>Password</label><input type="password" id="adminPass" class="form-control" required></div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === INJECTED: ADMIN DASHBOARD === -->
+    <section id="adminPanel" style="display:none; background:#212529; color:white; border-bottom:4px solid #0d6efd; padding:30px 0;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>Database Manager</h3>
+                <button class="btn btn-outline-light btn-sm" onclick="logout()">Logout</button>
+            </div>
+            <div class="card p-4 border-0 shadow-sm text-dark">
+                <h5>Add Partner</h5>
+                <form id="addPartnerForm" class="row g-3">
+                    <div class="col-md-4"><input type="text" id="pPlatform" class="form-control" placeholder="Platform (Binance)" required></div>
+                    <div class="col-md-4">
+                        <select id="pTier" class="form-select">
+                            <option value="Basic">Basic ($0)</option>
+                            <option value="Premium">Premium ($5)</option>
+                            <option value="Pro">Pro ($99)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4"><input type="text" id="pSponsor" class="form-control" placeholder="Sponsor Name" required></div>
+                    <div class="col-md-6"><input type="text" id="pBenefit" class="form-control" placeholder="Benefit ($100 Bonus)" required></div>
+                    <div class="col-md-6"><input type="url" id="pLink" class="form-control" placeholder="https://..." required></div>
+                    <button type="submit" class="btn btn-success w-100">Upload to Supabase</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- ======== [ 1. NAVIGATION BAR ] ======== -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-main">
@@ -1144,6 +1186,21 @@
     <!-- ======== [ 9. PARTNER MODALS ] ======== -->
     <!-- ... (All 6 partner modals: Binance, XM, Exness, Coinbase, Shopify, Amazon) ... -->
     <!-- (No changes were made inside the partner modals from the last version, only the footer and legal modals) -->
+    <!-- === INJECTED: DYNAMIC MODAL TEMPLATE === -->
+    <div class="modal fade" id="dynamicModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header" style="background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;">
+                    <div class="d-flex align-items-center" id="modalHeaderContent"></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4" id="modalLinksContainer"></div>
+                <div class="modal-footer justify-content-center bg-light border-top-0">
+                    <p class="small text-muted mb-0">Want to list here? <a href="#submit">See Pricing</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Modal 1: Binance -->
     <div class="modal fade" id="binanceModal" tabindex="-1" aria-labelledby="binanceModalLabel" aria-hidden="true">
@@ -1933,6 +1990,62 @@
             });
 
         });
+    </script>
+    <!-- === INJECTED: SUPABASE LOGIC === -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // 1. SETUP - PASTE YOUR KEYS HERE
+        const SUPABASE_URL = "https://lyzidxxonmaoomgtknhz.supabase.co"; 
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU";
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // 2. ADMIN LOGIC
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('admin') === 'true') new bootstrap.Modal(document.getElementById('adminLoginModal')).show();
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const { error } = await supabase.auth.signInWithPassword({ 
+                email: document.getElementById('adminEmail').value, 
+                password: document.getElementById('adminPass').value 
+            });
+            if (!error) {
+                bootstrap.Modal.getInstance(document.getElementById('adminLoginModal')).hide();
+                document.getElementById('adminPanel').style.display = 'block';
+            } else alert("Login Failed: " + error.message);
+        });
+
+        document.getElementById('addPartnerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const { error } = await supabase.from('partners').insert([{
+                platform: document.getElementById('pPlatform').value,
+                tier: document.getElementById('pTier').value,
+                sponsor: document.getElementById('pSponsor').value,
+                benefit: document.getElementById('pBenefit').value,
+                link: document.getElementById('pLink').value,
+                category: 'general' // Default
+            }]);
+            if (!error) { alert("Partner Added!"); location.reload(); } 
+            else alert(error.message);
+        });
+
+        window.logout = async () => { await supabase.auth.signOut(); location.href = "/"; };
+
+        // 3. DYNAMIC LOADING (Connects DB to UI)
+        async function loadDynamicPartners() {
+            // Fetch all partners
+            let { data: partners } = await supabase.from('partners').select('*');
+            
+            if(partners && partners.length > 0) {
+                // Example: We just log it for now to confirm connection
+                console.log("Supabase Connected. Partners found:", partners.length);
+                
+                // If you want these partners to appear in the "All Verified Platforms" grid,
+                // we can add that logic here later. For now, the Admin Panel is the priority.
+            }
+        }
+        
+        loadDynamicPartners();
     </script>
 
 </body>
