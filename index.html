@@ -1087,7 +1087,8 @@
                     <div class="col-lg-7">
                         
                         <!-- This form is 100% Netlify Ready -->
-                        <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="a287537c-fd85-45ef-ab8b-5d5d3feffd97">
                             <div id="form-success-message" class="alert alert-success d-none" role="alert">
                               <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent. We'll review it and get back to you soon.
                             </div>
@@ -1923,31 +1924,42 @@
                 return new bootstrap.Popover(popoverTriggerEl, { html: true }); // Allow HTML in popover if needed
             });
 
-            // --- 5. Professional Contact Form Submission (for NETLIFY) ---
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('form-success-message');
-            
-            if(contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const form = e.target;
-                    const data = new FormData(form);
-                    
-                    fetch("/", { // Netlify handles submission to the root
-                        method: "POST",
-                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        body: new URLSearchParams(data).toString()
-                    }).then(() => {
-                        successMessage.classList.remove('d-none');
-                        form.reset();
-                        successMessage.scrollIntoView({ behavior: 'smooth' });
-                    }).catch((error) => {
-                        alert('Oops! There was a problem submitting your form.');
-                    });
-                });
-            }
+           // --- 5. Professional Contact Form Submission (for Web3Forms) ---
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('form-success-message');
 
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop the page from reloading
+
+        const formData = new FormData(contactForm);
+        
+        // Send data to Web3Forms
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+        .then(async (response) => {
+            const json = await response.json();
+            if (response.status == 200) {
+                // Success: Show the success message div
+                successMessage.classList.remove('d-none');
+                // Clear the form inputs
+                contactForm.reset();
+                // Smooth scroll to the success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Error from Web3Forms
+                console.log(response);
+                alert(json.message);
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Something went wrong! Please try again later.");
+        });
+    });
+}
             // --- 6. Dynamic Current Year for Footer ---
             const yearSpan = document.getElementById('currentYear');
             if (yearSpan) {
