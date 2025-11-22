@@ -1075,59 +1075,126 @@
             </div>
         </section>
 
-        <!-- Contact Section (NETLIFY READY) -->
-        <section id="contact" class="py-5 fade-in-section">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bold">Get In Touch</h2>
-                    <p class="fs-5 text-muted">For questions or to submit your **Basic** link, send us a message.</p>
-                    <p class="text-muted">(For **Premium/Pro** plans, please pay first, then submit your link details here.)</p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        
-                        <!-- This form is 100% Netlify Ready -->
-                        <form id="contactForm" name="contact" method="POST" data-netlify="true">
-                            <div id="form-success-message" class="alert alert-success d-none" role="alert">
-                              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent. We'll review it and get back to you soon.
-                            </div>
-                            
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="contactName" class="form-label fw-bold">Your Name</label>
-                                    <input type="text" class="form-control form-control-custom" id="contactName" name="name" placeholder="John Doe" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contactEmail" class="form-label fw-bold">Your Email</label>
-                                    <input type="email" class="form-control form-control-custom" id="contactEmail" name="email" placeholder="you@example.com" required>
-                                </div>
-                                <div class="col-12">
-                                    <label for="contactSubject" class="form-label fw-bold">Subject</label>
-                                    <select class="form-select form-control-custom" id="contactSubject" name="subject">
-                                        <option>Basic Listing Request</option>
-                                        <option>Premium Listing Submission (Paid)</option>
-                                        <option>Pro Sponsor Submission (Paid)</option>
-                                        <option>General Question</option>
-                                        <option>Report a Link</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="contactMessage" class="form-label fw-bold">Message (Include your link & benefits)</label>
-                                    <textarea class="form-control form-control-custom" id="contactMessage" name="message" rows="5" placeholder="Please provide your referral link and a clear description of the user benefits..." required></textarea>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg px-5">
-                                        <i class="bi bi-send-fill me-2"></i> Submit for Review
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+       <!-- Contact Section -->
+<section id="contact" class="py-5 fade-in-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Get In Touch</h2>
+            <p class="fs-5 text-muted">For questions or to submit your <strong>Basic</strong> link, send us a message.</p>
+            <p class="text-muted">(For <strong>Premium/Pro</strong> plans, please pay first, then submit your link details here.)</p>
+        </div>
 
-    </main>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+
+                <!-- Success and Error Messages -->
+                <div id="form-success-message" class="alert alert-success d-none" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> 
+                    Thank you! Your message has been sent. We'll review it and get back to you soon.
+                </div>
+
+                <div id="form-error-message" class="alert alert-danger d-none" role="alert"></div>
+
+                <!-- Web3Form Contact Form -->
+                <form id="contactForm" method="POST" action="https://api.web3forms.com/submit" novalidate>
+
+                    <!-- REQUIRED: Your Web3Form Access Key -->
+                    <input type="hidden" name="access_key" value="a287537c-fd85-45ef-ab8b-5d5d3feffd97">
+
+                    <!-- Optional honeypot (spam protection) -->
+                    <div style="display:none">
+                        <input name="botcheck">
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="contactName" class="form-label fw-bold">Your Name</label>
+                            <input type="text" class="form-control form-control-custom" id="contactName" name="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="contactEmail" class="form-label fw-bold">Your Email</label>
+                            <input type="email" class="form-control form-control-custom" id="contactEmail" name="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="contactSubject" class="form-label fw-bold">Subject</label>
+                            <select class="form-select form-control-custom" id="contactSubject" name="subject">
+                                <option>Basic Listing Request</option>
+                                <option>Premium Listing Submission (Paid)</option>
+                                <option>Pro Sponsor Submission (Paid)</option>
+                                <option>General Question</option>
+                                <option>Report a Link</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="contactMessage" class="form-label fw-bold">Message (Include your link & benefits)</label>
+                            <textarea class="form-control form-control-custom" id="contactMessage" name="message" rows="5"
+                                placeholder="Please provide your referral link and a clear description..." required></textarea>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="bi bi-send-fill me-2"></i> Submit for Review
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+                        
+                       <!-- Web3Form — Simple POST version -->
+<form id="contactForm" name="contact" method="POST" action="https://api.web3forms.com/submit" novalidate>
+  <!-- REQUIRED: replace with your Web3Form access key -->
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+  <!-- Optional: redirect to a thank-you page on success -->
+  <!-- <input type="hidden" name="redirect" value="https://yoursite.com/thanks.html" /> -->
+
+  <!-- Optional honeypot (anti-spam) -->
+  <div style="display:none">
+    <label>Leave this empty</label>
+    <input name="botcheck" />
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="contactName" class="form-label fw-bold">Your Name</label>
+      <input type="text" class="form-control form-control-custom" id="contactName" name="name" placeholder="John Doe" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="contactEmail" class="form-label fw-bold">Your Email</label>
+      <input type="email" class="form-control form-control-custom" id="contactEmail" name="email" placeholder="you@example.com" required>
+    </div>
+
+    <div class="col-12">
+      <label for="contactSubject" class="form-label fw-bold">Subject</label>
+      <select class="form-select form-control-custom" id="contactSubject" name="subject">
+        <option>Basic Listing Request</option>
+        <option>Premium Listing Submission (Paid)</option>
+        <option>Pro Sponsor Submission (Paid)</option>
+        <option>General Question</option>
+        <option>Report a Link</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="contactMessage" class="form-label fw-bold">Message (Include your link & benefits)</label>
+      <textarea class="form-control form-control-custom" id="contactMessage" name="message" rows="5" required placeholder="Please provide your referral link and a clear description..."></textarea>
+    </div>
+
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary btn-lg px-5">
+        <i class="bi bi-send-fill me-2"></i> Submit for Review
+      </button>
+    </div>
+  </div>
+</form>
 
     <!-- ======== [ 5. FOOTER (UPDATED) ] ======== -->
     <footer class="site-footer">
@@ -1923,31 +1990,58 @@
                 return new bootstrap.Popover(popoverTriggerEl, { html: true }); // Allow HTML in popover if needed
             });
 
-            // --- 5. Professional Contact Form Submission (for NETLIFY) ---
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('form-success-message');
-            
-            if(contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const form = e.target;
-                    const data = new FormData(form);
-                    
-                    fetch("/", { // Netlify handles submission to the root
-                        method: "POST",
-                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        body: new URLSearchParams(data).toString()
-                    }).then(() => {
-                        successMessage.classList.remove('d-none');
-                        form.reset();
-                        successMessage.scrollIntoView({ behavior: 'smooth' });
-                    }).catch((error) => {
-                        alert('Oops! There was a problem submitting your form.');
-                    });
-                });
-            }
+           <script>
+(function() {
+  const form = document.getElementById('contactForm');
+  const successEl = document.getElementById('form-success-message');
+  const errorEl = document.getElementById('form-error-message');
 
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Hide messages
+    successEl?.classList.add('d-none');
+    if (errorEl) {
+      errorEl.classList.add('d-none');
+      errorEl.textContent = '';
+    }
+
+    const fd = new FormData(form);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fd
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        // Show success message
+        successEl?.classList.remove('d-none');
+        form.reset();
+        successEl?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const msg = json.message || 'Submission failed. Please try again.';
+        if (errorEl) {
+          errorEl.textContent = msg;
+          errorEl.classList.remove('d-none');
+        } else {
+          alert(msg);
+        }
+      }
+    } catch (err) {
+      if (errorEl) {
+        errorEl.textContent = "Network error. Please try later.";
+        errorEl.classList.remove('d-none');
+      } else {
+        alert("Network error. Please try later.");
+      }
+    }
+  });
+})();
+</script>
             // --- 6. Dynamic Current Year for Footer ---
             const yearSpan = document.getElementById('currentYear');
             if (yearSpan) {
