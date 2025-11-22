@@ -543,21 +543,48 @@
             <div class="card p-4 border-0 shadow-sm text-dark">
                 <h5>Add Partner</h5>
                 <form id="addPartnerForm" class="row g-3">
-                    <div class="col-md-4"><input type="text" id="pPlatform" class="form-control" placeholder="Platform (Binance)" required></div>
-                    <div class="col-md-4">
-                        <select id="pTier" class="form-select">
-                            <option value="Basic">Basic ($0)</option>
-                            <option value="Premium">Premium ($5)</option>
-                            <option value="Pro">Pro ($99)</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4"><input type="text" id="pSponsor" class="form-control" placeholder="Sponsor Name" required></div>
-                    <div class="col-md-6"><input type="text" id="pBenefit" class="form-control" placeholder="Benefit ($100 Bonus)" required></div>
-                    <div class="col-md-6"><input type="url" id="pLink" class="form-control" placeholder="https://..." required></div>
-                    <button type="button" class="btn btn-success w-100" onclick="manualUpload()">
-    <i class="bi bi-cloud-upload"></i> Upload (Test Mode)
-</button>
-                </form>
+    <div class="col-md-4">
+        <label class="form-label small text-muted">App Name</label>
+        <input type="text" id="pPlatform" class="form-control" placeholder="e.g. Binance" required>
+    </div>
+    
+    <div class="col-md-4">
+        <label class="form-label small text-muted">Tier</label>
+        <select id="pTier" class="form-select">
+            <option value="Basic">Basic</option>
+            <option value="Premium">Premium</option>
+            <option value="Pro">Pro</option>
+        </select>
+    </div>
+    
+    <div class="col-md-4">
+        <label class="form-label small text-muted">Sponsor Name</label>
+        <input type="text" id="pSponsor" class="form-control" placeholder="e.g. CryptoKing">
+    </div>
+    
+    <div class="col-md-5">
+        <label class="form-label small text-muted">Benefit Description</label>
+        <input type="text" id="pBenefit" class="form-control" placeholder="e.g. $100 Trading Fee Credit" required>
+    </div>
+    
+    <div class="col-md-3">
+        <label class="form-label small text-muted">Referral Code (Optional)</label>
+        <input type="text" id="pCode" class="form-control" placeholder="e.g. SAVE20">
+    </div>
+    
+    <div class="col-md-4">
+        <label class="form-label small text-muted">Referral Link</label>
+        <input type="url" id="pLink" class="form-control" placeholder="https://..." required>
+    </div>
+    
+    <div class="col-12">
+        <button type="button" class="btn btn-success w-100" onclick="addApp()">
+            <i class="bi bi-cloud-upload"></i> Upload App & Link
+        </button>
+    </div>
+</form>
+
+<div id="partnerGrid" class="row mt-4"></div>
             </div>
         </div>
     </section>
