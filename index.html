@@ -1907,16 +1907,19 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        // --- 1. SETUP ---
+       // --- 1. SETUP ---
         // MAKE SURE THESE ARE INSIDE QUOTES ""
-       const SUPABASE_URL = "https://lyzidxxonmaoomgtknhz.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU"; 
-const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const SUPABASE_URL = "https://lyzidxxonmaoomgtknhz.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5emlkeHhvbm1hb29tZ3Rrbmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM3MzcwMzQsImV4cCI6MjA3OTMxMzAzNH0.FdRq20WezPeaY35xSkzAQjH_RaMNZlH-QANdDQQVXPU";
+
+        // --- 2. INIT ---
+        let sbClient;
+        try {
+            sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
             console.log("Supabase connected");
-         catch (err) {
+        } catch (err) {
             alert("CRITICAL ERROR: Could not connect to database. Check your keys in the code.");
         }
-
        // --- 4. MASTER FETCH (Updates Admin & Public UI) ---
         async function fetchApps() {
             // 1. Fetch Data
