@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Referral Partners — Curated Sign-Up Bonuses</title>
+    <meta name="description" content="We curate and verify the highest-paying affiliate & partner links for Binance, Exness, XM and other top platforms. Compare benefits and sign up with confidence."/>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- 
+      =======================================================
+      V10 - THE "RAZORPAY-READY" FIX
+      - CRITICAL: Replaced all placeholder legal text.
+      - CRITICAL: Added a new, dedicated "Refund Policy".
+      - ADDED: Visible support email & address to footer.
+      - RE-FRAMED: Changed business model text from 
+        "selling links" to "selling digital advertising".
+      - This version is ready to be re-submitted for
+        payment gateway approval.
+      =======================================================
+    -->
+    <style>
+        :root {
+            --brand-blue: #0d6efd;
+            --brand-blue-dark: #0a58ca;
+            --brand-green: #10b981;
+            --brand-light: #f8f9fa;
+            --brand-dark: #0f172a;
+            --text-muted: #6c757d;
+            --text-body: #212529;
+            --text-light: #f8fafc;
+        }
+
+        /* Set scroll-behavior for smooth anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--text-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+
+        /* --- 1. Navbar --- */
+        .navbar-main {
+            background-color: transparent;
+            transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .navbar-main.scrolled {
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--brand-blue-dark);
+            letter-spacing: -0.5px;
+            display: flex; /* Ensure logo and text are side-by-side */
+            align-items: center;
+        }
+        .navbar-brand .logo-img {
+            height: 32px; /* Adjust logo size */
+            margin-right: 0.5rem;
+        }
+        .navbar .nav-link {
+            color: rgba(0,0,0,0.6);
+            font-weight: 600;
+        }
+        .navbar .nav-link:hover, .navbar .nav-link.active {
+            color: var(--brand-blue);
+        }
+        .btn-navbar {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- 2. Hero Section --- */
+        .hero-section {
+            padding: 120px 0 100px;
+            background: linear-gradient(110deg, rgba(240, 245, 255, 0.9), rgba(255, 255, 255, 0.9) 60%), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM91 81c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM45 44c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM80 16c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%230d6efd' fill-opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .hero-section .display-5 {
+            font-weight: 800;
+        }
+        .hero-section .lead {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+        .hero-logo { /* New style for hero logo */
+            height: 60px; /* Adjust size as needed */
+            margin-bottom: 1.5rem;
+        }
+        
+        /* --- 2.1. Smart Search (UPGRADED) --- */
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+        }
+        .search-form {
+            position: relative;
+        }
+        .search-form .form-control {
+            height: 58px;
+            border-radius: 12px;
+            padding-left: 50px;
+            border: 1px solid #dee2e6;
+        }
+        .search-form .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+        .search-form .btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 42px;
+            font-weight: 600;
+        }
+        .search-suggestions {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 1rem;
+            z-index: 10;
+        }
+        .search-suggestions.show {
+            display: block;
+        }
+        .suggestion-item {
+            display: inline-block;
+            background: var(--brand-light);
+            color: var(--text-body);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .suggestion-item:hover {
+            background-color: #e9ecef;
+        }
+
+        /* --- 2.2. Hero Partner Logos (NEW) --- */
+        .partner-logo-bar {
+            margin-top: 3rem;
+        }
+        .partner-logo-bar img {
+            height: 24px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .partner-logo-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- 2.5. How It Works (NEW) --- */
+        .how-it-works .step-card {
+            position: relative;
+            padding-left: 3.5rem;
+        }
+        .how-it-works .step-number {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--brand-blue);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+        }
+
+        /* --- 2.6. Stats Bar (NEW) --- */
+        .stats-bar {
+            background-color: var(--brand-light);
+        }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+        }
+        .stat-item p {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* --- 2.8. Top 5 Picks Section (NEW) --- */
+        .horizontal-scroll-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 1.5rem 0.5rem;
+            scrollbar-width: thin; /* Firefox */
+        }
+        .horizontal-scroll-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        .horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: #dee2e6;
+            border-radius: 10px;
+        }
+        
+        .top-pick-card {
+            flex: 0 0 320px; /* Do not shrink, base width 320px */
+            margin-right: 1.5rem;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 1.5rem;
+        }
+        .top-pick-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .top-pick-card .top-pick-badge {
+            position: absolute;
+            top: -15px;
+            left: 1.5rem;
+            background: linear-gradient(135deg, var(--brand-blue), #0d47a1);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+        }
+        .top-pick-card .app-logo {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* --- 3. Partner Cards (CLEANED UP) --- */
+        .partner-card {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .app-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            object-fit: contain;
+            background-color: #fff;
+            padding: 4px;
+            border: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .badge-verified {
+            background: linear-gradient(90deg, #10b981, #06956c);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: help; /* Indicates it's interactive */
+        }
+        .partner-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .partner-card-body .card-title {
+            font-weight: 700;
+        }
+        .partner-card-body .benefit-list {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            padding-left: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .partner-card-footer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            margin-top: auto;
+        }
+        
+        /* --- 3.5. Partner Filter Tabs --- */
+        .partner-filter-nav .nav-link {
+            font-weight: 600;
+            color: var(--text-muted);
+            border: 2px solid transparent;
+        }
+        .partner-filter-nav .nav-link.active {
+            color: var(--brand-blue);
+            border-bottom-color: var(--brand-blue);
+            background: none;
+        }
+
+        /* --- 4. Recommendations Section --- */
+        .recommendation-card {
+            background-color: var(--brand-light);
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease-out;
+        }
+        .recommendation-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+        .recommendation-card .app-logo {
+            width: 64px;
+            height: 64px;
+        }
+
+        /* --- 5. Pricing/Submit Section --- */
+        .section-pricing {
+            background-color: var(--brand-light);
+        }
+        .pricing-card {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 16px;
+            height: 100%;
+        }
+        .pricing-card-highlight {
+            border-color: var(--brand-blue);
+            box-shadow: 0 8px 30px rgba(13, 110, 253, 0.1);
+        }
+        .pricing-card .list-unstyled .bi {
+            color: var(--brand-green);
+        }
+
+        /* --- 6. Contact Form --- */
+        .form-control-custom {
+            background-color: var(--brand-light);
+            border: 1px solid #dee2e6;
+            padding: 12px 16px;
+            border-radius: 10px;
+        }
+        .form-control-custom:focus {
+            background-color: #fff;
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+        }
+
+        /* --- 7. Footer --- */
+        .site-footer {
+            padding: 4rem 0;
+            background: var(--brand-dark);
+            color: #94a3b8;
+        }
+        .site-footer .footer-brand {
+            font-weight: 800;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex; /* Allow logo and text to sit together */
+            align-items: center;
+        }
+        .site-footer .footer-brand .logo-img { /* New style for footer logo */
+            height: 32px; /* Adjust size */
+            margin-right: 0.5rem;
+            filter: brightness(0) invert(1); /* Make logo white for dark footer */
+        }
+        .site-footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
+        .site-footer .footer-heading {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+        /* New Footer Contact Info */
+        .footer-contact-info {
+            font-size: 0.9rem;
+            list-style: none;
+            padding-left: 0;
+        }
+        .footer-contact-info li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-contact-info .bi {
+            margin-right: 0.5rem;
+            width: 16px;
+        }
+
+        /* --- 9. Scroll Animations (NEW) --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 10. Partner Modals (FIXED) --- */
+        .partner-modal-header {
+            background-color: var(--brand-light);
+            border-bottom: 1px solid #dee2e6;
+        }
+        .partner-modal-header .app-logo {
+            width: 64px;
+            height: 64px;
+        }
+        .partner-link-card {
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .partner-link-card:hover {
+            border-color: var(--brand-blue);
+            box-shadow: 0 6px 15px rgba(13, 110, 253, 0.1);
+        }
+        .partner-link-card.pro-sponsor {
+            border-color: var(--brand-blue);
+            background: linear-gradient(135deg, rgba(240, 245, 255, 0.7), #fff 60%);
+        }
+        .partner-link-card.premium-partner {
+            border-color: var(--brand-green);
+            background: linear-gradient(135deg, rgba(236, 253, 245, 0.7), #fff 60%);
+        }
+
+        .partner-link-card .badge {
+            font-size: 0.8rem;
+        }
+        .partner-link-card .partner-benefit {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-body);
+        }
+        .partner-link-card .btn-claim {
+            font-weight: 700;
+        }
+        
+        /* --- 11. Legal Modals --- */
+        .modal-body h3.h5 { /* Style for subheadings in modals */
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+
+    <!-- ======== [ 1. NAVIGATION BAR ] ======== -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-main">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <!-- LOGO ADDED -->
+                <img src="https" alt="The Referral Partners Logo" class="logo-img"
+                     onerror="this.onerror=null; this.src='https://placehold.co/100x32/0d6efd/ffffff?text=TRP&font=inter';">
+                <span>The Referral Partners</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#top-picks">Top Picks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">All Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#submit">List Your Link</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary btn-navbar px-4" href="#submit">Become a Partner</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== [ 2. HERO SECTION ] ======== -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8 text-center">
+                    <!-- LOGO ADDED -->
+                    <img src="https" alt="The Referral Partners Logo" class="hero-logo d-block mx-auto mb-4"
+                         onerror="this.onerror=null; this.src='https://placehold.co/120x60/0d6efd/ffffff?text=TRP&font=inter';">
+                    <h1 class="display-5 fw-bold mb-4">Maximize Your Sign-Up Bonuses.</h1>
+                    <p class="lead text-muted mb-5">
+                        We curate and verify the highest-paying referral links for top finance, crypto, and trading apps. Compare benefits and sign up with confidence.
+                    </p>
+                    
+                    <!-- Live Search Form (UPGRADED) -->
+                    <div class="search-wrapper mx-auto">
+                        <form class="search-form" onsubmit="event.preventDefault(); document.querySelector('#partners').scrollIntoView({behavior: 'smooth'});" role="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input class="form-control" id="searchInput" type="search" placeholder="Search partners (e.g., Binance, Exness, XM)" aria-label="Search partners" autocomplete="off">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                        <!-- Smart Search Suggestions Box (NEW) -->
+                        <div class="search-suggestions" id="searchSuggestions">
+                            <strong class="small text-muted">Trending Searches:</strong>
+                            <span class="suggestion-item" data-query="Binance">Binance</span>
+                            <span class="suggestion-item" data-query="Shopify">Shopify</span>
+                            <span class="suggestion-item" data-query="Coinbase">Coinbase</span>
+                            <span class="suggestion-item" data-query="Exness">Exness</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Partner Logos (NEW) -->
+                    <div class="partner-logo-bar text-center">
+                        <small class="text-muted fw-bold d-block mb-3">TRUSTED BY PARTNERS AT</small>
+                        <div class="d-flex justify-content-center align-items-center gap-4 px-3">
+                            <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=032" alt="Binance" style="height: 20px;">
+                            <img src="https://placehold.co/100x30/000/fff?text=Exness&font=inter" alt="Exness" style="height: 18px;">
+                            <img src="https" alt="Coinbase" style="height: 20px;"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/100x30/0052FF/ffffff?text=Coinbase&font=inter';">
+                            <img src="https://placehold.co/100x30/212B36/fff?text=Shopify&font=inter" alt="Shopify" style="height: 20px;">
+                            <img src="https://placehold.co/100x30/FF9900/fff?text=Amazon&font=inter" alt="Amazon" style="height: 20px;">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======== [ 3. MAIN CONTENT ] ======== -->
+    <main>
+        
+        <!-- ======== [ 2.5. HOW IT WORKS SECTION (NEW) ] ======== -->
+        <section id="how-it-works" class="py-5 fade-in-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Get Your Bonus in 3 Steps</h2>
+                </div>
+                <div class="row g-4 g-lg-5">
+                    <div class="col-md-4">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h5 class="fw-bold">Find a Platform</h5>
+                            <p class="text-muted">Browse or search our curated list of platforms to find the one you want to join.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h5 class="fw-bold">Pick Your Link</h5>
+                            <p class="text-muted">Choose from our list of verified partners to get the best benefits for that platform.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h5 class="fw-bold">Get Your Bonus</h5>
+                            <p class="text-muted">Click "Claim" and sign up. Your new benefits are automatically applied.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== [ 2.6. STATS BAR (NEW) ] ======== -->
+        <section class="py-4 stats-bar fade-in-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-item text-center p-3">
+                            <h3>15+</h3>
+                            <p>Verified Platforms</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="stat-item text-center p-3">
+                            <h3>$50,000+</h3>
+                            <p>In User Bonuses</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="stat-item text-center p-3">
+                            <h3>1,200+</h3>
+                            <p>Bonuses Claimed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== [ 2.8. TOP 5 PICKS SECTION (NEW) ] ======== -->
+        <section id="top-picks" class="py-5 fade-in-section">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Editor's Top 5 Picks</h2>
+                    <p class="fs-5 text-muted">Our curated list of the best platforms with verified partner offers.</p>
+                </div>
+                <div class="horizontal-scroll-wrapper">
+                    <!-- Top Pick 1 -->
+                    <div class="top-pick-card">
+                        <div class="top-pick-badge">#1 Best Crypto</div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="app-logo me-3" src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=032" alt="Binance Logo">
+                            <h5 class="mb-0 fw-bold">Binance</h5>
+                        </div>
+                        <p class="text-muted small">The $100 fee credit from our top partner is a genuine, useful bonus for any active trader.</p>
+                        <button class="btn btn-primary w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#binanceModal">See Partner Links</button>
+                    </div>
+                    <!-- Top Pick 2 -->
+                    <div class="top-pick-card">
+                        <div class="top-pick-badge">#1 Best Beginner</div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="app-logo me-3" src="https://placehold.co/100x100/d97706/ffffff?text=XM&font=inter" alt="XM Logo">
+                            <h5 class="mb-0 fw-bold">XM Trading</h5>
+                        </div>
+                        <p class="text-muted small">The $50 no-deposit bonus is perfect for new traders to start without risking their own money.</p>
+                        <button class="btn btn-primary w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#xmModal">See Partner Links</button>
+                    </div>
+                    <!-- Top Pick 3 -->
+                    <div class="top-pick-card">
+                        <div class="top-pick-badge">#1 Best E-com</div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="app-logo me-3" src="https://placehold.co/100x100/212B36/ffffff?text=Shopify&font=inter" alt="Shopify Logo">
+                            <h5 class="mb-0 fw-bold">Shopify</h5>
+                        </div>
+                        <p class="text-muted small">Our partner's extended 30-day trial gives you the breathing room to actually build and test your store.</p>
+                        <button class="btn btn-primary w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#shopifyModal">See Partner Links</button>
+                    </div>
+                    <!-- Top Pick 4 -->
+                    <div class="top-pick-card">
+                        <div class="top-pick-badge">#1 Best Forex</div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="app-logo me-3" src="https://placehold.co/100x100/1e293b/ffffff?text=Exness&font=inter" alt="Exness Logo">
+                            <h5 class="mb-0 fw-bold">Exness</h5>
+                        </div>
+                        <p class="text-muted small">A 100% deposit match is an extremely strong offer, combined with their top-tier platform.</p>
+                        <button class="btn btn-primary w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#exnessModal">See Partner Links</button>
+                    </div>
+                    <!-- Top Pick 5 -->
+                    <div class="top-pick-card">
+                        <div class="top-pick-badge">#1 Easiest Crypto</div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img class="app-logo me-3" src="https" alt="Coinbase Logo"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/100x100/0052FF/ffffff?text=CB&font=inter';">
+                            <h5 class="mb-0 fw-bold">Coinbase</h5>
+                        </div>
+                        <p class="text-muted small">The $10 in free Bitcoin is simple and reliable. The best choice for anyone just starting in crypto.</p>
+                        <button class="btn btn-primary w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#coinbaseModal">See Partner Links</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Grid Section -->
+        <section id="partners" class="py-5 bg-light fade-in-section" style="padding-top: 6rem !important; margin-top: -3rem;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">All Partner Platforms</h2>
+                    <p class="fs-5 text-muted">Browse our full directory or filter by category.</p>
+                </div>
+
+                <!-- ======== [ 3.5. PARTNER FILTER TABS ] ======== -->
+                <ul class="nav nav-pills justify-content-center mb-5 partner-filter-nav" id="partner-filter-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="filter-all-tab" data-category="all" type="button" role="tab">All Platforms</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="filter-crypto-tab" data-category="crypto" type="button" role="tab">Crypto</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="filter-trading-tab" data-category="trading" type="button" role="tab">Trading/Forex</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="filter-ecommerce-tab" data-category="ecommerce" type="button" role="tab">E-commerce</button>
+                    </li>
+                </ul>
+
+                <!-- This is the container for the live search results -->
+                <div id="partnerListContainer" class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+                    <!-- Card 1: Binance (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="crypto">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=032" alt="Binance Logo">
+                                    <!-- Trust Tooltip (NEW) -->
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Binance</h5>
+                                <p class="text-muted small">Platform: Crypto Exchange</p>
+                                <ul class="benefit-list">
+                                    <li>World's largest crypto exchange</li>
+                                    <li>Low fees and wide asset selection</li>
+                                    <li>Top Partner Benefit: $100 Credit</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#binanceModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Exness (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="trading">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https://placehold.co/100x100/1e293b/ffffff?text=Exness&font=inter" alt="Exness Logo">
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Exness</h5>
+                                <p class="text-muted small">Platform: Forex & CFD Broker</p>
+                                <ul class="benefit-list">
+                                    <li>Top-tier Forex & CFD broker</li>
+                                    <li>Instant withdrawals</li>
+                                    <li>Top Partner Benefit: 100% Bonus</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exnessModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: XM (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="trading">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https://placehold.co/100x100/d97706/ffffff?text=XM&font=inter" alt="XM Logo">
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">XM Trading</h5>
+                                <p class="text-muted small">Platform: Forex Broker</p>
+                                <ul class="benefit-list">
+                                    <li>Great for beginner traders</li>
+                                    <li>Excellent educational resources</li>
+                                    <li>Top Partner Benefit: $50 Bonus</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#xmModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Coinbase (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="crypto">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https" alt="Coinbase Logo"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/0052FF/ffffff?text=CB&font=inter';">
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Coinbase</h5>
+                                <p class="text-muted small">Platform: Crypto Exchange</p>
+                                <ul class="benefit-list">
+                                    <li>Easiest place to buy/sell crypto</li>
+                                    <li>Trusted, regulated, and secure</li>
+                                    <li>Top Partner Benefit: $10 Free BTC</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#coinbaseModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Shopify (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="ecommerce">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https" alt="Shopify Logo"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/212B36/ffffff?text=Shopify&font=inter';">
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Shopify</h5>
+                                <p class="text-muted small">Platform: E-commerce Builder</p>
+                                <ul class="benefit-list">
+                                    <li>All-in-one e-commerce platform</li>
+                                    <li>Build your online store easily</li>
+                                    <li>Top Partner Benefit: 30-Day Trial</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#shopifyModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Amazon Associates (CLEANED) -->
+                    <div class="col partner-card-wrapper" data-category="ecommerce">
+                        <div class="partner-card h-100">
+                            <div class="partner-card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <img class="app-logo" src="https://placehold.co/100x100/FF9900/ffffff?text=Amazon&font=inter" alt="Amazon Logo">
+                                    <div class="badge-verified" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="We verify all partners listed for this platform.">
+                                        Verified Partners
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Amazon Associates</h5>
+                                <p class="text-muted small">Platform: Affiliate Program</p>
+                                <ul class="benefit-list">
+                                    <li>Monetize your website traffic</li>
+                                    <li>The world's largest affiliate program</li>
+                                    <li>Top Partner Benefit: Faster Approval</li>
+                                </ul>
+                            </div>
+                            <div class="partner-card-footer">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#amazonModal">
+                                    See Partner Links
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- No Results Message (for search) -->
+                <div id="noResultsMessage" class="text-center p-5" style="display: none;">
+                    <i class="bi bi-emoji-frown fs-1 text-muted"></i>
+                    <h4 class="mt-3">No Platforms Found</h4>
+                    <p class="text-muted">Your search query didn't match any of our platforms. Please try again.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="py-5 fade-in-section"> <!-- Removed bg-light to alternate sections -->
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Why These Platforms?</h2>
+                    <p class="fs-5 text-muted">We don't just list platforms. We build relationships.</p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- This section is now different, explaining the "Our Picks" from above -->
+                    <div class="col-lg-10">
+                        <div class="recommendation-card">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-3 text-center p-4">
+                                    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=032" alt="Binance" class="app-logo">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="p-4">
+                                        <h5 class="fw-bold mb-1">Best for Crypto: <span class="text-primary">Binance</span></h5>
+                                        <p class="text-muted mb-0">The $100 fee credit is a genuine, useful bonus for any active trader on the world's largest exchange. Their platform is robust for both beginners and pros.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="recommendation-card">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-3 text-center p-4">
+                                    <img src="https" alt="XM" class="app-logo"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/d97706/ffffff?text=XM&font=inter';">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="p-4">
+                                        <h5 class="fw-bold mb-1">Best for Beginners: <span class="text-primary">XM</span></h5>
+                                        <p class="text-muted mb-0">The $50 no-deposit bonus is perfect for new traders to start without risking their own money. Their educational resources are also top-notch.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit/Pricing Section (PAYMENT LINKS ADDED) -->
+        <section id="submit" class="py-5 section-pricing fade-in-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Become a Partner</h2>
+                    <p class="fs-5 text-muted">Purchase a verified advertising slot on our platform.</p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Tier 1: Basic (Free) -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pricing-card p-5 d-flex flex-column">
+                            <h3 class="fw-bold mb-1">Basic Listing</h3>
+                            <p class="text-muted mb-4">A standard directory listing.</p>
+                            <div class="display-4 fw-bold mb-3">$0<span class="fs-5 text-muted">/forever</span></div>
+                            <ul class="list-unstyled text-dark mb-4 flex-grow-1" style="font-size: 1.05rem;">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Standard Listing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Listed in 1 Platform</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Community Support</li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x-circle me-2"></i> <del>Verified Badge</del></li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x-circle me-2"></i> <del>Top of List</del></li>
+                            </ul>
+                            <!-- This button still points to the contact form -->
+                            <a href="#contact" class="btn btn-outline-primary w-100 btn-lg">Submit Your Link</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Premium (Monthly) - HIGHLIGHTED -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pricing-card pricing-card-highlight p-5 d-flex flex-column">
+                            <h3 class="fw-bold mb-1">Premium Slot</h3>
+                            <p class="text-primary mb-4">Best for active partners.</p>
+                            <div class="display-4 fw-bold mb-3">$5<span class="fs-5 text-muted">/mo</span></div>
+                            <ul class="list-unstyled text-dark mb-4 flex-grow-1" style="font-size: 1.05rem;">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Standard Listing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Listed in 3 Platforms</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Priority Support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> "Verified Partner" Badge</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Premium List Placement</li>
+                            </ul>
+                            <!-- 
+                              PAYMENT LINK UPDATE:
+                              Replace this href with your $5/mo Stripe/Razorpay Link
+                            -->
+                            <a href="https://buy.stripe.com/YOUR-PREMIUM-LINK-ID" target="_blank" class="btn btn-primary w-100 btn-lg">Purchase Premium</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tier 3: Pro (Yearly) -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pricing-card p-5 d-flex flex-column">
+                            <h3 class="fw-bold mb-1">Pro Ad Slot</h3>
+                            <p class="text-muted mb-4">Maximum visibility.</p>
+                            <div class="display-4 fw-bold mb-3">$99<span class="fs-5 text-muted">/yr</span></div>
+                            <ul class="list-unstyled text-dark mb-4 flex-grow-1" style="font-size: 1.05rem;">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> All Premium Features</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Listed in Unlimited Platforms</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> Featured on Home Page</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> "#1 Pro Sponsor" Slot</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i> 2 Months Free (vs. Monthly)</li>
+                            </ul>
+                            <!-- 
+                              PAYMENT LINK UPDATE:
+                              Replace this href with your $99/yr Stripe/Razorpay Link
+                            -->
+                            <a href="https://buy.stripe.com/YOUR-PRO-LINK-ID" target="_blank" class="btn btn-outline-primary w-100 btn-lg">Purchase Pro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (NETLIFY READY) -->
+        <section id="contact" class="py-5 fade-in-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Get In Touch</h2>
+                    <p class="fs-5 text-muted">For questions or to submit your **Basic** link, send us a message.</p>
+                    <p class="text-muted">(For **Premium/Pro** plans, please pay first, then submit your link details here.)</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        
+                        <!-- This form is 100% Netlify Ready -->
+                        <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                            <div id="form-success-message" class="alert alert-success d-none" role="alert">
+                              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent. We'll review it and get back to you soon.
+                            </div>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contactName" class="form-label fw-bold">Your Name</label>
+                                    <input type="text" class="form-control form-control-custom" id="contactName" name="name" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contactEmail" class="form-label fw-bold">Your Email</label>
+                                    <input type="email" class="form-control form-control-custom" id="contactEmail" name="email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactSubject" class="form-label fw-bold">Subject</label>
+                                    <select class="form-select form-control-custom" id="contactSubject" name="subject">
+                                        <option>Basic Listing Request</option>
+                                        <option>Premium Listing Submission (Paid)</option>
+                                        <option>Pro Sponsor Submission (Paid)</option>
+                                        <option>General Question</option>
+                                        <option>Report a Link</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactMessage" class="form-label fw-bold">Message (Include your link & benefits)</label>
+                                    <textarea class="form-control form-control-custom" id="contactMessage" name="message" rows="5" placeholder="Please provide your referral link and a clear description of the user benefits..." required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="bi bi-send-fill me-2"></i> Submit for Review
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======== [ 5. FOOTER (UPDATED) ] ======== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <a href="#home" class="footer-brand d-inline-block">
+                        <!-- LOGO ADDED -->
+                        <img src="https" alt="The Referral Partners Logo" class="logo-img"
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x32/0d6efd/ffffff?text=TRP&font=inter';">
+                        The Referral Partners
+                    </a>
+                    <p class="my-3">A curated directory for verified, high-value referral links. We connect users with the best bonuses and partners with a high-intent audience.</p>
+                    
+                    <!-- New Contact Info for Razorpay -->
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-envelope-fill"></i> <a href="mailto:support@thereferralpartners.me">support@thereferralpartners.me</a></li>
+                        <li><i class="bi bi-geo-alt-fill"></i> [Your Business Address, City, Country]</li>
+                    </ul>
+                    
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="footer-heading">Site</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#home">Home</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#top-picks">Top Picks</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#partners">All Partners</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="footer-heading">Partners</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#submit">List Your Link</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#contact">Contact Us</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h5 class="footer-heading">Legal</h5>
+                    <ul class="nav flex-column">
+                        <!-- Updated Links -->
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a></li>
+                        <!-- NEW REFUND POLICY LINK -->
+                        <li class="nav-item mb-2"><a class="nav-link p-0" href="#" data-bs-toggle="modal" data-bs-target="#refundModal">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #334155;">
+            <div class="text-center">
+                <small>&copy; <span id="currentYear"></span> The Referral Partners. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== [ 9. PARTNER MODALS ] ======== -->
+    <!-- ... (All 6 partner modals: Binance, XM, Exness, Coinbase, Shopify, Amazon) ... -->
+    <!-- (No changes were made inside the partner modals from the last version, only the footer and legal modals) -->
+    
+    <!-- Modal 1: Binance -->
+    <div class="modal fade" id="binanceModal" tabindex="-1" aria-labelledby="binanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https" alt="Binance Logo" class="app-logo me-3"
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/F0B90B/ffffff?text=BNB&font=inter';">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="binanceModalLabel">Binance Partner Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">$100 Trading Fee Credit</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>CryptoKing</strong> (20% fee kickback included)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//accounts.binance.com/en/register?ref=PARTNER_1_CODE" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">$50 New User Voucher</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>TraderJoe</strong> (For new accounts only)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//accounts.binance.com/en/register?ref=PARTNER_2_CODE" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">10% Fee Discount</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>AltCoinMama</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//accounts.binance.com/en/register?ref=PARTNER_3_CODE" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: XM (with Partner Update) -->
+    <div class="modal fade" id="xmModal" tabindex="-1" aria-labelledby="xmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https://placehold.co/100x100/d97706/ffffff?text=XM&font=inter" alt="XM Logo" class="app-logo me-3">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="xmModalLabel">XM Partner Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot (UPDATED) -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">100% Deposit Bonus</p>
+                                <p class="text-muted small mb-0">Full support, fast deposit and withdrawal. <strong>Mandatory Partner Code: P767D</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https://affs.click/knGnL" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot (UPDATED) -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">Deposit Bonus and Help</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>ProTrader</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https://affs.click/knGnL" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot (UPDATED) -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">Support Line Only</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>NewbieTrader</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https://affs.click/knGnL" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 3: Exness -->
+    <div class="modal fade" id="exnessModal" tabindex="-1" aria-labelledby="exnessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https://placehold.co/100x100/1e293b/ffffff?text=Exness&font=inter" alt="Exness Logo" class="app-logo me-3">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="exnessModalLabel">Exness Partner Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">100% Deposit Match Bonus</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>ProTrader</strong> (Up to $2000)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.exness.com/register?ref=PARTNER_1_CODE" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">Reduced Spreads</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>SmartTrade</strong> (Raw spread account)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.exness.com/register?ref=PARTNER_2_CODE" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">Standard Sign-up Link</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>BasicForex</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.exness.com/register?ref=PARTNER_3_CODE" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 4: Coinbase -->
+    <div class="modal fade" id="coinbaseModal" tabindex="-1" aria-labelledby="coinbaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https" alt="Coinbase Logo" class="app-logo me-3"
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/0052FF/ffffff?text=CB&font=inter';">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="coinbaseModalLabel">Coinbase Partner Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">$10 in free Bitcoin</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>SatoshiFan</strong> (After $100 trade)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.coinbase.com/join/PARTNER_1_CODE" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">$5 in free Bitcoin</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>CryptoNewbie</strong> (After $50 trade)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.coinbase.com/join/PARTNER_2_CODE" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">Standard Sign-up Link</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>BasicCrypto</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.coinbase.com/join/PARTNER_3_CODE" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 5: Shopify -->
+    <div class="modal fade" id="shopifyModal" tabindex="-1" aria-labelledby="shopifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https" alt="Shopify Logo" class="app-logo me-3"
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/212B36/ffffff?text=Shopify&font=inter';">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="shopifyModalLabel">Shopify Partner Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">30-Day Extended Free Trial</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>EcomGuru</strong> (Standard is 3 days)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.shopify.com/free-trial?ref=PARTNER_1_CODE" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">First 3 Months for $1/mo</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>SellerPro</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.shopify.com/free-trial?ref=PARTNER_2_CODE" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">Standard 3-Day Trial</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>MyStore</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//www.shopify.com/free-trial?ref=PARTNER_3_CODE" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 6: Amazon -->
+    <div class="modal fade" id="amazonModal" tabindex="-1" aria-labelledby="amazonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <div class="d-flex align-items-center">
+                        <img src="https://placehold.co/100x100/FF9900/ffffff?text=Amazon&font=inter" alt="Amazon Logo" class="app-logo me-3">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="amazonModalLabel">Amazon Associates Links</h5>
+                            <p class="text-muted small mb-0">Select a verified partner to get your bonus.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <!-- #1 Pro Sponsor Slot -->
+                    <div class="partner-link-card pro-sponsor p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">#1 Pro Sponsor</span>
+                                <p class="partner-benefit mb-1">Faster Approval + Free Guide</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>SellerPro</strong> (Get '$1k Guide' PDF)</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//affiliate-program.amazon.com/register?ref=PARTNER_1_CODE" target="_blank" class="btn btn-primary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #2 Premium Partner Slot -->
+                    <div class="partner-link-card premium-partner p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Premium Partner</span>
+                                <p class="partner-benefit mb-1">Priority Review</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>QuickApprove</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//affiliate-program.amazon.com/register?ref=PARTNER_2_CODE" target="_blank" class="btn btn-success btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #3 Basic Partner Slot -->
+                    <div class="partner-link-card p-3 mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-8">
+                                <span class="badge bg-secondary mb-2">Basic Partner</span>
+                                <p class="partner-benefit mb-1">Standard Sign-up Link</p>
+                                <p class="text-muted small mb-0">Sponsored by: <strong>BasicSeller</strong></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https_//affiliate-program.amazon.com/register?ref=PARTNER_3_CODE" target="_blank" class="btn btn-outline-secondary btn-claim w-100">Claim Bonus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GLITCH FIX: CTA added to modal -->
+                    <hr>
+                    <div class="text-center">
+                        <p class="fw-bold mb-1">Want to list your link here?</p>
+                        <p class="small text-muted mb-2">Get in front of thousands of users by becoming a partner.</p>
+                        <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">See Pricing Plans</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- END OF PARTNER MODALS -->
+
+    <!-- ======== [ 10. NEW LEGAL MODALS (UPDATED) ] ======== -->
+
+    <!-- Modal: About Us (UPDATED) -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <h5 class="modal-title fw-bold" id="aboutModalLabel">About The Referral Partners</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <div class="text-center">
+                        <img src="https" alt="The Referral Partners Logo" class="hero-logo d-block mx-auto mb-3" style="height: 50px;"
+                             onerror="this.onerror=null; this.src='https://placehold.co/120x60/0d6efd/ffffff?text=TRP&font=inter';">
+                        <h3 class="fw-bold">Our Mission: Trust Through Simplicity.</h3>
+                        <p class="lead text-muted">We're not just a list. We're a filter. Our mission is built on four core values: <br> <strong>Trust</strong>, <strong>Transparency</strong>, <strong>Value</strong>, and <strong>Simplicity</strong>.</p>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="fw-bold mt-4">Our Story</h4>
+                    <p class="text-muted">Finding a good referral link is a mess. Every influencer, blog, and forum is flooded with links. It's impossible to know which ones are the best, which are expired, or which ones are just low-value. For partners, it's just as hard to get their high-value links seen by the right audience.</p>
+                    <p class="text-muted">We wanted to create one simple, trusted place for partners and users to connect. A place where the benefits are clear, the links are verified, and everyone wins.</p>
+
+                    <h4 class="fw-bold mt-4">Our Solution: A Curated Marketplace</h4>
+                    <p class="text-muted">The Referral Partners was built to fix this. We provide a professional directory service.
+                    <ul class="text-muted">
+                        <li><strong>For Users (Simplicity & Value):</strong> We do the work for you. We find the platforms, verify their partners, and organize their links by the real, tangible benefits they offer. You get the best bonus, every time, with zero guesswork.</li>
+                        <li><strong>For Partners (Transparency & Trust):We sell verified digital advertising slots.</strong> Instead of getting lost in the noise, you can purchase a listing to place your verified link directly in front of users who are ready to sign up. Our model connects high-quality partners with high-intent users.</li>
+                    </ul>
+                    
+                    <div class="alert alert-primary bg-light mt-4" role="alert">
+                        <h5 class="fw-bold alert-heading">What's Next?</h5>
+                        <p>We're just getting started. Our goal is to become the web's most trusted directory for every referral program worth joining.
+                        </p>
+                        <hr>
+                        <div class="d-flex flex-wrap gap-2">
+                             <a href="#partners" class="btn btn-primary" data-bs-dismiss="modal">Browse All Platforms</a>
+                             <a href="#submit" class="btn btn-outline-primary" data-bs-dismiss="modal">Purchase a Listing</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Privacy Policy (UPDATED) -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <h5 class="modal-title fw-bold" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><strong>Last Updated: [CURRENT_DATE]</strong></p>
+                    <p>The Referral Partners ("we," "us," or "our") operates the thereferralpartners.me website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+                    
+                    <h3 class="h5 fw-bold">Information Collection and Use</h3>
+                    <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+                    <ul>
+                        <li><strong>Personal Data:</strong> While using our Service, especially when submitting a partner application via our contact form, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). This may include, but is not limited to: Email address, Name, and Website URL.</li>
+                        <li><strong>Usage Data:</strong> We may also collect information on how the Service is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</li>
+                    </ul>
+                    
+                    <h3 class="h5 fw-bold">Use of Data</h3>
+                    <p>We use the collected data for various purposes:</p>
+                    <ul>
+                        <li>To provide and maintain the Service</li>
+                        <li>To notify you about changes to our Service</li>
+                        <li>To process your applications to become a partner</li>
+                        <li>To provide customer care and support</li>
+                        <li>To monitor the usage of the Service</li>
+                        <li>To detect, prevent and address technical issues</li>
+                    </ul>
+
+                    <h3 class="h5 fw-bold">Disclosure of Data</h3>
+                    <p>We will not share your Personal Data with any third party, except as required by law. Your submitted partner link and sponsor name will be made public on the site once approved.</p>
+                    
+                    <h3 class="h5 fw-bold">Contact Us</h3>
+                    <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@thereferralpartners.me">support@thereferralpartners.me</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Terms of Service (UPDATED) -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <h5 class="modal-title fw-bold" id="termsModalLabel">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><strong>Last Updated: [CURRENT_DATE]</strong></p>
+                    <p>Please read these Terms of Service ("Terms") carefully before using the thereferralpartners.me website (the "Service") operated by The Referral Partners ("us," "we," or "our").</p>
+                    <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.</p>
+                    
+                    <h3 class="h5 fw-bold">1. Description of Service</h3>
+                    <p>The Service is a digital directory that provides curated referral and affiliate links ("Partner Links") submitted by third-party partners ("Partners"). We sell advertising placements ("Listings") to Partners on a free or paid basis. We are not a party to any agreement between you and any third-party platform you may visit via a Partner Link.</p>
+                    
+                    <h3 class="h5 fw-bold">2. Partner Listings</h3>
+                    <p>We sell digital advertising slots to our Partners. While we perform a basic verification of the benefits offered, we do not guarantee the accuracy, completeness, or timeliness of any information on our site. The terms of any referral bonus are set by the third-party platform and/or the Partner, not by us. We are not responsible for any disputes, expired offers, or issues between you and a Partner or third-party platform.</p>
+
+                    <h3 class="h5 fw-bold">3. Payments</h3>
+                    <p>We offer paid advertising slots ("Premium" and "Pro"). These are subscription-based services billed on a monthly or yearly basis. All payments are processed through a third-party payment gateway (e.g., Stripe, Razorpay). By purchasing a Listing, you agree to the payment terms presented at the time of purchase.</p>
+
+                    <h3 class="h5 fw-bold">4. Links To Other Web Sites</h3>
+                    <p>Our Service contains links to third-party web sites or services that are not owned or controlled by The Referral Partners. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that The Referral Partners shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+                    
+                    <h3 class="h5 fw-bold">5. Contact Us</h3>
+                    <p>If you have any questions about these Terms, please contact us at: <a href="mailto:support@thereferralpartners.me">support@thereferralpartners.me</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Disclaimer (UPDATED) -->
+    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <h5 class="modal-title fw-bold" id="disclaimerModalLabel">Disclaimer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><strong>Last Updated: [CURRENT_DATE]</strong></p>
+                    <p>The information provided by The Referral Partners on thereferralpartners.me (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.</p>
+                    
+                    <h3 class="h5 fw-bold">Affiliate & Referral Disclaimer</h3>
+                    <p>The Site is a directory of affiliate and referral links. We are not the owners of these links; we provide a listing service for our Partners. When you click on a "Claim Bonus" link, you are leaving our Site and being redirected to a third-party website. We may or may not have a financial relationship with the platforms listed, but we do earn revenue from our Partners for providing the advertising slot.</p>
+                    
+                    <h3 class="h5 fw-bold">Not Financial Advice</h3>
+                    <p>The information on this Site, especially regarding crypto and trading platforms, is not financial advice, nor is it an endorsement or recommendation of any platform. Trading and financial services carry significant risk. You should always do your own research (DYOR) before signing up for any service or making any investment.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ======== [ 11. NEW REFUND POLICY MODAL (CRITICAL) ] ======== -->
+    <div class="modal fade" id="refundModal" tabindex="-1" aria-labelledby="refundModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0" style="border-radius: 16px;">
+                <div class="modal-header partner-modal-header">
+                    <h5 class="modal-title fw-bold" id="refundModalLabel">Refund Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><strong>Last Updated: [CURRENT_DATE]</strong></p>
+                    <p>Thank you for purchasing a digital advertising slot on The Referral Partners. We value your business and strive to provide a high-quality service.</p>
+
+                    <h3 class="h5 fw-bold">General Policy</h3>
+                    <p>We sell digital, non-tangible advertising services. Due to the nature of this service, all sales are final. **We generally do not offer refunds** for monthly or yearly subscription payments once the payment has been processed and the advertising slot ("Listing") has been made live on the site.</p>
+                    
+                    <h3 class="h5 fw-bold">Monthly Subscriptions</h3>
+                    <p>When you purchase a monthly subscription, you are billed for the upcoming 30-day period. You may cancel your subscription at any time by contacting our support team. Your Listing will remain active until the end of the current billing period. No partial-month refunds will be provided.</p>
+
+                    <h3 class="h5 fw-bold">Yearly Subscriptions</h3>
+                    <p>Yearly subscriptions offer a significant discount over the monthly rate. You may cancel at any time, but no refunds will be issued for the remaining portion of the year.</p>
+
+                    <h3 class="h5 fw-bold">Exceptions</h3>
+                    <p>A refund may be considered on a case-by-case basis in the following situation:</p>
+                    <ul>
+                        <li><strong>Service Not Rendered:</strong> If you paid for a Listing and we failed to publish your Listing on the site within 72 business hours of receiving your details.</li>
+                    </ul>
+                    <p>We do not provide refunds for low link performance, low click-through rates, or if you change your mind.</p>
+                    
+                    <h3 class="h5 fw-bold">How to Request a Review</h3>
+                    <p>If you believe you qualify for an exception, please contact our support team at <a href="mailto:support@thereferralpartners.me">support@thereferralpartners.me</a> with your payment receipt and a detailed explanation of the issue.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF MODALS -->
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript for Professional Functions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // --- 1. Navbar Scroll Behavior ---
+            const mainNavbar = document.getElementById('mainNavbar');
+            if (mainNavbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        mainNavbar.classList.add('scrolled');
+                    } else {
+                        mainNavbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // --- 2. Combined Search & Filter ---
+            const searchInput = document.getElementById('searchInput');
+            const partnerListContainer = document.getElementById('partnerListContainer');
+            const allPartnerCards = Array.from(partnerListContainer.querySelectorAll('.partner-card-wrapper'));
+            const noResultsMessage = document.getElementById('noResultsMessage');
+            const filterTabs = document.querySelectorAll('#partner-filter-tabs .nav-link');
+
+            function filterAndSearch() {
+                const query = searchInput.value.trim().toLowerCase();
+                const activeCategory = document.querySelector('#partner-filter-tabs .nav-link.active').dataset.category;
+                let visibleCards = 0;
+
+                allPartnerCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    const cardText = card.textContent.toLowerCase();
+
+                    const isCategoryMatch = (activeCategory === 'all' || cardCategory === activeCategory);
+                    const isSearchMatch = cardText.includes(query);
+
+                    if (isCategoryMatch && isSearchMatch) {
+                        card.style.display = '';
+                        visibleCards++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                noResultsMessage.style.display = (visibleCards === 0) ? 'block' : 'none';
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterAndSearch);
+
+                filterTabs.forEach(tab => {
+                    tab.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        filterTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        filterAndSearch();
+                    });
+                });
+            }
+
+            // --- 3. Smart Search Suggestions (NEW) ---
+            const searchSuggestions = document.getElementById('searchSuggestions');
+            const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+            if (searchInput) {
+                // Show suggestions on focus
+                searchInput.addEventListener('focus', () => {
+                    searchSuggestions.classList.add('show');
+                });
+
+                // Hide suggestions on blur (with a small delay to allow clicking a suggestion)
+                searchInput.addEventListener('blur', () => {
+                    setTimeout(() => {
+                        searchSuggestions.classList.remove('show');
+                    }, 200);
+                });
+
+                // Handle clicking a suggestion
+                suggestionItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        searchInput.value = item.dataset.query;
+                        filterAndSearch();
+                        searchSuggestions.classList.remove('show');
+                    });
+                });
+            }
+
+            // --- 4. Initialize Bootstrap Popovers (NEW Trust Tooltips) ---
+            const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl, { html: true }); // Allow HTML in popover if needed
+            });
+
+            // --- 5. Professional Contact Form Submission (for NETLIFY) ---
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('form-success-message');
+            
+            if(contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const form = e.target;
+                    const data = new FormData(form);
+                    
+                    fetch("/", { // Netlify handles submission to the root
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(data).toString()
+                    }).then(() => {
+                        successMessage.classList.remove('d-none');
+                        form.reset();
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    }).catch((error) => {
+                        alert('Oops! There was a problem submitting your form.');
+                    });
+                });
+            }
+
+            // --- 6. Dynamic Current Year for Footer ---
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) {
+                yearSpan.innerText = new Date().getFullYear();
+            }
+            
+            // --- 7. Activate Bootstrap Scrollspy ---
+            const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNavbar',
+                offset: 100
+            });
+            
+            // --- 8. Smooth scroll for all hash links ---
+            // This is now handled by the `scroll-behavior: smooth;` in CSS
+            // but we add back the mobile nav closing logic.
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Manually close mobile navbar on click
+                    const navMenu = document.getElementById('navMenu');
+                    if (navMenu && navMenu.classList.contains('show')) {
+                        const toggler = document.querySelector('.navbar-toggler');
+                        if(toggler) toggler.click();
+                    }
+                });
+            });
+
+            // --- 9. Fade-in Section Animation on Scroll (NEW) ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
