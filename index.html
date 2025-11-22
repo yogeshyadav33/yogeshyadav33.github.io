@@ -1924,42 +1924,56 @@
                 return new bootstrap.Popover(popoverTriggerEl, { html: true }); // Allow HTML in popover if needed
             });
 
-           // --- 5. Professional Contact Form Submission (for Web3Forms) ---
-const contactForm = document.getElementById('contactForm');
-const successMessage = document.getElementById('form-success-message');
+          document.addEventListener("DOMContentLoaded", function() {
+    // 1. Find the form and the success message div
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('form-success-message');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stop the page from reloading
+    // 2. Check if the form actually exists on this page
+    if (contactForm) {
+        console.log("Form found, listening for submit..."); // Debugging check
 
-        const formData = new FormData(contactForm);
-        
-        // Send data to Web3Forms
-        fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        })
-        .then(async (response) => {
-            const json = await response.json();
-            if (response.status == 200) {
-                // Success: Show the success message div
-                successMessage.classList.remove('d-none');
-                // Clear the form inputs
-                contactForm.reset();
-                // Smooth scroll to the success message
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // Error from Web3Forms
-                console.log(response);
-                alert(json.message);
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            alert("Something went wrong! Please try again later.");
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+
+            // Show a "Sending..." status (optional but good for UX)
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerText : 'Send';
+            if(submitBtn) submitBtn.innerText = "Sending...";
+
+            const formData = new FormData(contactForm);
+
+            // Send to Web3Forms
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                const json = await response.json();
+                if (response.status == 200) {
+                    // SUCCESS
+                    successMessage.classList.remove('d-none'); // Show success green box
+                    contactForm.reset(); // Clear inputs
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // ERROR (e.g., wrong key)
+                    console.log(response);
+                    alert("Error: " + json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Something went wrong! Please check your internet connection.");
+            })
+            .finally(() => {
+                // Reset button text
+                if(submitBtn) submitBtn.innerText = originalBtnText;
+            });
         });
-    });
-}
+    } else {
+        console.error("Could not find element with id 'contactForm'");
+    }
+});
             // --- 6. Dynamic Current Year for Footer ---
             const yearSpan = document.getElementById('currentYear');
             if (yearSpan) {
