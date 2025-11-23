@@ -1946,7 +1946,14 @@
             // 4. Loop & Render
             apps.forEach(app => {
                 const mainLink = app.app_urls.length > 0 ? app.app_urls[0].url : '#';
-                
+
+                // This ensures the link always starts with https://, preventing the current domain from being prepended.
+let rawLink = app.app_urls.length > 0 ? app.app_urls[0].url : '#';
+// Ensure protocol is present for external links
+if (rawLink !== '#' && !rawLink.startsWith('http')) {
+    rawLink = 'https://' + rawLink;
+}
+const mainLink = rawLink;
                 // Badge Logic
                 let badgeClass = 'bg-secondary';
                 if(app.tier === 'Premium') badgeClass = 'bg-success';
