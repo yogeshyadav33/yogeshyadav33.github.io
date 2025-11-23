@@ -1931,7 +1931,11 @@
 
             // 4. Loop & Render
             apps.forEach(app => {
-                const mainLink = app.app_urls.length > 0 ? app.app_urls[0].url : '#';
+                // This part starts the robust link check and defines the final 'mainLink'
+let rawLink = app.app_urls.length > 0 ? app.app_urls[0].url : '#';
+// ... rest of the protocol check logic here ...
+const mainLink = rawLink; 
+// ... continues with Badge Logic and rendering ...
 
                 // This ensures the link always starts with https://, preventing the current domain from being prepended.
 let rawLink = app.app_urls.length > 0 ? app.app_urls[0].url : '#';
