@@ -1,0 +1,101 @@
+/* === THE REFERRAL PARTNERS: DESIGN SYSTEM V1 === */
+
+:root {
+    /* 1. Brand Tokens */
+    --color-accent: #0071e3;       /* Professional Blue */
+    --color-dark: #111111;         /* Deep Black */
+    --color-text: #1d1d1f;         /* Soft Black for text */
+    --color-muted: #86868b;        /* Muted Grey */
+    --color-bg: #ffffff;
+    
+    /* 2. Glassmorphism Tokens */
+    --glass-surface: rgba(255, 255, 255, 0.85);
+    --glass-blur: 20px;
+    
+    /* 3. Spacing & Layout */
+    --container-width: 1100px;
+    --radius-smooth: 16px;
+}
+
+/* Modern Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased; /* Crisp text on Mac/iPhone */
+    line-height: 1.5;
+}
+
+/* Fluid Container */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* === COMPONENT: The Glass Navbar === */
+.nav-glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: var(--glass-surface);
+    backdrop-filter: blur(var(--glass-blur)); /* The "Frosted" Effect */
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* === COMPONENT: The Hero Section === */
+.hero {
+    padding-top: 160px; /* Account for fixed nav */
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem); /* Fluid Typography */
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #0071e3 0%, #00a8e8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === COMPONENT: The Grid === */
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    padding-bottom: 80px;
+}
