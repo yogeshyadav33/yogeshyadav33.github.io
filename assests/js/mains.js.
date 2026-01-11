@@ -1,0 +1,110 @@
+/**
+ * THE REFERRAL PARTNERS (TRP) - CORE ENGINE v1.0
+ * Architecture: Event-Driven | Pattern: Async/Await
+ * ------------------------------------------------------------------
+ * This script handles the "Logic Layer":
+ * 1. Fetches data (Simulated for now, Supabase ready)
+ * 2. Renders the "Floating Cards" dynamically
+ * 3. Handles user interactions (Click-to-Copy)
+ */
+
+// 1. CONFIGURATION (The "Settings" Dial)
+const CONFIG = {
+    animationDelay: 100, // ms between cards appearing (Waterfall effect)
+    currencySymbol: '$',
+};
+
+// 2. MOCK DATABASE (Temporary "Dummy" Data until we connect Supabase)
+// This proves the system works before we spend money on servers.
+const MOCK_DB = [
+    {
+        id: 1,
+        name: "Binance",
+        category: "Crypto",
+        bonus: "$100 USDT Credit",
+        color: "#F3BA2F", // Brand Color
+        link: "https://accounts.binance.com/register",
+        verified: true
+    },
+    {
+        id: 2,
+        name: "Shopify",
+        category: "SaaS",
+        bonus: "3 Months for $1",
+        color: "#95BF47",
+        link: "https://shopify.pxf.io/trp",
+        verified: true
+    },
+    {
+        id: 3,
+        name: "Wise",
+        category: "Fintech",
+        bonus: "Fee-Free Transfer (up to $600)",
+        color: "#2ED06E",
+        link: "https://wise.com/invite/",
+        verified: true
+    },
+    {
+        id: 4,
+        name: "Ledger",
+        category: "Hardware",
+        bonus: "Free Shipping + Crypto Pack",
+        color: "#000000",
+        link: "https://shop.ledger.com/",
+        verified: true
+    }
+];
+
+// 3. THE INITIALIZER (The "Start Engine" Button)
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("TRP System: Online 🟢");
+    initApp();
+});
+
+async function initApp() {
+    const grid = document.getElementById('partners-grid');
+    
+    // Simulate a network request delay (so you can see your beautiful loader)
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Clear the "Loading..." spinner
+    grid.innerHTML = '';
+
+    // Render the data
+    renderCards(MOCK_DB, grid);
+}
+
+// 4. THE RENDERER (The "Factory" that builds cards)
+function renderCards(data, container) {
+    data.forEach((partner, index) => {
+        // Create the card element
+        const card = document.createElement('article');
+        card.className = 'card-floating';
+        
+        // Add a staggering animation delay (Professional Polish)
+        card.style.animationDelay = `${index * 0.2}s`;
+        
+        // The HTML Template (Dynamic Injection)
+        card.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                <div style="background: ${partner.color}; width: 40px; height: 40px; border-radius: 50%;"></div>
+                ${partner.verified ? '<span style="font-size: 12px; opacity: 0.5;">✅ Verified</span>' : ''}
+            </div>
+            
+            <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 0.25rem;">${partner.name}</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">${partner.category}</p>
+            
+            <div style="background: var(--color-surface); padding: 12px; border-radius: 8px; margin-bottom: 1.5rem;">
+                <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-muted);">Bonus</span>
+                <span style="font-weight: 600; color: var(--color-brand);">${partner.bonus}</span>
+            </div>
+
+            <a href="${partner.link}" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">
+                Claim Offer
+            </a>
+        `;
+
+        // Inject into the grid
+        container.appendChild(card);
+    });
+}
