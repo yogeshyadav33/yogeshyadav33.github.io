@@ -1,0 +1,128 @@
+/* THE REFERRAL PARTNERS (TRP) - DESIGN SYSTEM v1.0
+   Architecture: Token-Based | Methodology: BEM-Lite
+*/
+
+/* 1. DESIGN TOKENS (The Source of Truth) */
+:root {
+    /* Colors - High-End Fintech Palette */
+    --color-brand: #0071e3;        /* Signature Blue */
+    --color-brand-alt: #00d4ff;    /* Action Cyan */
+    --color-bg: #ffffff;
+    --color-surface: #f5f5f7;      /* Subtle background sections */
+    --color-text-main: #1d1d1f;    /* Apple-style deep grey */
+    --color-text-muted: #86868b;
+    
+    /* Spacing System */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    
+    /* Effects */
+    --glass: rgba(255, 255, 255, 0.75);
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
+    --shadow-elevated: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. MODERN RESET */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* 3. FLUID TYPOGRAPHY */
+h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Scales based on screen size */
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+p.lead {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--color-text-muted);
+}
+
+/* 4. LAYOUT COMPONENTS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.glass-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    height: 72px;
+    background: var(--glass);
+    backdrop-filter: blur(20px); /* The high-end "frosted" look */
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* 5. THE DYNAMIC GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    padding: var(--space-lg) 0;
+}
+
+/* 6. SIGNATURE ANIMATIONS (The "Unbelievable" Part) */
+@keyframes zero-gravity {
+    0% { transform: translateY(0px); }50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.card-floating {
+    background: white;
+    padding: var(--space-md);
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-soft);
+    animation: zero-gravity 6s ease-in-out infinite; /* Signature Float */
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.card-floating:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: var(--shadow-elevated);
+}
+
+/* 7. UTILITIES */
+.gradient-text {
+    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-alt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background: var(--color-brand);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
